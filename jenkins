@@ -56,7 +56,7 @@ pipeline {
         stage('docker-push') {
             steps {
                 script {
-                     withDockerRegistry(credentialsId: 'docker-credentials', toolName: 'docker') {
+                     withDockerRegistry('dockerhub-credentials', toolName: 'docker') {
                     sh 'docker push sandhyareddy2713/bank-image'
                   }
                 }
